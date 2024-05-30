@@ -1,0 +1,101 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    font-family: 'Archivo Black', sans-serif; /* Apply Archivo Black font */
+}
+
+.click-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('bg.jpg');
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    transition: opacity 1s ease, visibility 1s ease;
+    z-index: 2;
+}
+
+.click-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 30px; /* Adjusted padding */
+    font-size: 16px; /* Adjusted font size */
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px; /* Adjusted border radius */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    overflow: hidden; /* Needed for the shine effect */
+    z-index: 3; /* Ensure button is above the blur effect */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.click-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.click-button::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.1));
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+}
+
+.click-button:hover::before {
+    transform: translateX(100%);
+}
+
+.content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 1;
+    font-size: 20px; /* Adjusted font size */
+}
+
+.image-links {
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 65px; /* Adjusted width */
+    height: auto;
+    margin: 0 10px; /* Adjusted margin */
+    transition: transform 0.3s ease;
+    border: none; /* Remove border */
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
