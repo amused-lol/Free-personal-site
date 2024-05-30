@@ -7,7 +7,7 @@ Download .ZIP file
 open up index.html to change around your links/text
 
 ## Step 3 ## 
-enjoy
+Drag/paste your background into the extracted folder and rename it to bg.png
 
 
 
